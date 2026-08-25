@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>管理员登录 · Silu</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&family=Noto+Sans+SC:wght@400;500;700;900&family=Noto+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a href="index.html" class="logo">
+      <svg class="logo-mark" width="30" height="30" viewBox="0 0 34 34" fill="none">
+        <path d="M17 2 L30 17 L17 32 L4 17 Z" stroke="currentColor" stroke-width="2"/>
+        <circle cx="17" cy="17" r="5" stroke="currentColor" stroke-width="2"/>
+      </svg>
+      <span class="logo-text" data-i18n="siteName">Silu</span>
+    </a>
+    <nav class="main-nav"></nav>
+    <div class="header-right">
+      <nav class="lang-switch" aria-label="Language switch">
+        <button class="lang-btn" data-lang="zh">中文</button>
+        <button class="lang-btn" data-lang="ru">РУ</button>
+        <button class="lang-btn" data-lang="kk">ҚАЗ</button>
+        <button class="lang-btn" data-lang="en">EN</button>
+      </nav>
+      <div class="auth-area" id="authArea"></div>
+    </div>
+  </div>
+</header>
+
+<main class="wrap form-page">
+  <div class="form-card" style="max-width:420px;">
+    <p class="login-intro" data-i18n="adminLoginIntro">仅限管理员使用，请用手机验证码登录</p>
+
+    <div class="auth-tabs">
+      <button class="auth-tab active" id="tabLoginBtn" data-i18n="tabLogin">登录</button>
+      <button class="auth-tab" id="tabRegisterBtn" data-i18n="tabRegister">注册</button>
+    </div>
+
+    <!-- 登录：手机号+验证码+邀请码，不显示姓名(已有账号不需要) -->
+    <form id="loginForm" class="auth-form active">
+      <h1 data-i18n="adminLoginTitle">管理员登录</h1>
+      <div class="field-group">
+        <label data-i18n="otpPhoneLabel">手机号</label>
+        <div class="otp-row">
+          <input type="tel" id="loginPhoneInput" placeholder="+7 700 000 0000" required>
+          <button type="button" class="btn btn-ghost" id="loginSendCodeBtn" data-i18n="otpSendBtn">获取验证码</button>
+        </div>
+      </div>
+      <div class="field-group">
+        <label data-i18n="otpCodeLabel">验证码</label>
+        <input type="text" id="loginCodeInput" inputmode="numeric" maxlength="6" required>
+      </div>
+      <div class="field-group">
+        <label data-i18n="adminInviteCodeLabel">管理员邀请码</label>
+        <input type="text" id="loginInviteInput" required>
+        <span class="field-hint" data-i18n="adminInviteHint">每次登录都需要填写正确的管理员邀请码</span>
+      </div>
+      <p class="dev-otp-hint" id="loginDevHint" hidden></p>
+      <p class="error-msg" id="loginError"></p>
+      <div class="form-actions" style="justify-content:stretch;">
+        <button type="submit" class="btn btn-post" style="width:100%; justify-content:center;" data-i18n="otpLoginBtn">登录</button>
+      </div>
+    </form>
+
+    <!-- 注册：手机号+验证码+姓名+邀请码，独立表单，字段从一开始就完整显示 -->
+    <form id="registerForm" class="auth-form">
+      <h1 data-i18n="adminRegisterPageTitle">注册管理员账号</h1>
+      <div class="field-group">
+        <label data-i18n="otpPhoneLabel">手机号</label>
+        <div class="otp-row">
+          <input type="tel" id="registerPhoneInput" placeholder="+7 700 000 0000" required>
+          <button type="button" class="btn btn-ghost" id="registerSendCodeBtn" data-i18n="otpSendBtn">获取验证码</button>
+        </div>
+      </div>
+      <div class="field-group">
+        <label data-i18n="otpCodeLabel">验证码</label>
+        <input type="text" id="registerCodeInput" inputmode="numeric" maxlength="6" required>
+      </div>
+      <div class="field-group">
+        <label data-i18n="otpNameLabel">姓名</label>
+        <input type="text" id="registerNameInput" required>
+      </div>
+      <div class="field-group">
+        <label data-i18n="adminInviteCodeLabel">管理员邀请码</label>
+        <input type="text" id="registerInviteInput" required>
+      </div>
+      <p class="dev-otp-hint" id="registerDevHint" hidden></p>
+      <p class="error-msg" id="registerError"></p>
+      <div class="form-actions" style="justify-content:stretch;">
+        <button type="submit" class="btn btn-post" style="width:100%; justify-content:center;" data-i18n="submitRegister">注册并登录</button>
+      </div>
+    </form>
+
+    <p class="login-mode-switch"><a href="login.html" data-i18n="goUserLogin">我是普通用户</a></p>
+  </div>
+</main>
+
+<div class="toast" id="toast"></div>
+
+<script src="config.js"></script>
+<script src="common.js"></script>
+<script src="admin-login.js"></script>
+</body>
+</html>

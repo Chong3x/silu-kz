@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>信息详情 · Silu</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&family=Noto+Sans+SC:wght@400;500;700;900&family=Noto+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a href="index.html" class="logo">
+      <svg class="logo-mark" width="30" height="30" viewBox="0 0 34 34" fill="none">
+        <path d="M17 2 L30 17 L17 32 L4 17 Z" stroke="currentColor" stroke-width="2"/>
+        <circle cx="17" cy="17" r="5" stroke="currentColor" stroke-width="2"/>
+      </svg>
+      <span class="logo-text" data-i18n="siteName">Silu</span>
+    </a>
+
+    <div class="mobile-menu" id="mobileMenu">
+    <nav class="main-nav">
+      <a href="index.html" data-nav="home" data-i18n="navHome">首页</a>
+      <a href="favorites.html" data-nav="favorites" data-i18n="navFavorites">收藏</a>
+      <a href="profile.html" data-nav="profile" data-i18n="navProfile">我的发布</a>
+      <a href="feedback.html" data-nav="feedback" data-i18n="navFeedback">意见反馈</a>
+      <a href="referral.html" data-nav="referral" data-i18n="navReferral">分享有礼</a>
+      <a href="admin.html" data-nav="admin" data-i18n="navAdmin" id="navAdminLink" hidden>管理后台</a>
+    </nav>
+      <nav class="lang-switch" aria-label="Language switch">
+        <button class="lang-btn" data-lang="zh">中文</button>
+        <button class="lang-btn" data-lang="ru">РУ</button>
+        <button class="lang-btn" data-lang="kk">ҚАЗ</button>
+        <button class="lang-btn" data-lang="en">EN</button>
+      </nav>
+    </div>
+    <div class="header-right">
+      <div class="auth-area" id="authArea"></div>
+      <a href="post.html" class="btn btn-post" data-i18n="navPost">发布信息</a>
+    </div>
+    <button class="hamburger-btn" id="hamburgerBtn" aria-label="Menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<main class="wrap detail-page">
+  <a href="index.html" class="back-link" data-i18n="backHome">← 返回首页</a>
+  <div id="detailContent"><!-- injected by JS --></div>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap footer-inner">
+    <div>
+      <div class="logo-text footer-logo" data-i18n="siteName">Silu</div>
+      <p class="footer-tagline" data-i18n="footerTagline">服务哈萨克斯坦华人社区的信息发布平台</p>
+      <nav class="footer-nav">
+        <a href="index.html" data-i18n="navHome">首页</a>
+        <a href="favorites.html" data-i18n="navFavorites">收藏</a>
+        <a href="profile.html" data-i18n="navProfile">我的发布</a>
+        <a href="feedback.html" data-i18n="navFeedback">意见反馈</a>
+        <a href="referral.html" data-i18n="navReferral">分享有礼</a>
+        <a href="disclaimer.html" data-i18n="navDisclaimer">免责声明</a>
+      </nav>
+    </div>
+    <div class="footer-right">
+      <p class="footer-disclaimer-short" data-i18n="disclaimerShort">本站信息均由用户自行发布，平台不对内容真实性负责，交易前请自行核实。</p>
+      <a class="footer-disclaimer-link" href="disclaimer.html" data-i18n="disclaimerReadMore">查看完整声明 →</a>
+      <p class="footer-note" data-i18n="footerNote">万事顺遂</p>
+    </div>
+  </div>
+</footer>
+
+<div class="toast" id="toast"></div>
+
+<script src="config.js"></script>
+<script src="common.js"></script>
+<script src="listing.js"></script>
+</body>
+</html>

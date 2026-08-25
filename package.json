@@ -1,0 +1,24 @@
+{
+  "name": "silk-road-post",
+  "version": "1.0.0",
+  "private": true,
+  "description": "丝路驿站 - 哈萨克斯坦华人信息发布平台(Node.js + Express + SQLite 后端 + 静态前端)",
+  "main": "backend/server.js",
+  "scripts": {
+    "start": "node backend/server.js",
+    "dev": "node backend/server.js",
+    "seed": "node backend/seed-demo.js"
+  },
+  "dependencies": {
+    "better-sqlite3": "^11.3.0",
+    "bcryptjs": "^2.4.3",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2",
+    "google-auth-library": "^9.14.1",
+    "jsonwebtoken": "^9.0.2",
+    "multer": "^2.0.0",
+    "sharp": "^0.33.4",
+    "uuid": "^9.0.1"
+  }
+}

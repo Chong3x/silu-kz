@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>管理后台 · Silu</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&family=Noto+Sans+SC:wght@400;500;700;900&family=Noto+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a href="index.html" class="logo">
+      <svg class="logo-mark" width="30" height="30" viewBox="0 0 34 34" fill="none">
+        <path d="M17 2 L30 17 L17 32 L4 17 Z" stroke="currentColor" stroke-width="2"/>
+        <circle cx="17" cy="17" r="5" stroke="currentColor" stroke-width="2"/>
+      </svg>
+      <span class="logo-text" data-i18n="siteName">Silu</span>
+    </a>
+    <nav class="main-nav"></nav>
+    <div class="header-right">
+      <nav class="lang-switch" aria-label="Language switch">
+        <button class="lang-btn" data-lang="zh">中文</button>
+        <button class="lang-btn" data-lang="ru">РУ</button>
+        <button class="lang-btn" data-lang="kk">ҚАЗ</button>
+        <button class="lang-btn" data-lang="en">EN</button>
+      </nav>
+      <div class="auth-area" id="authArea"></div>
+    </div>
+  </div>
+</header>
+
+<main class="wrap" style="padding-top:28px; padding-bottom:64px;">
+  <h1 class="section-title" data-i18n="adminDashTitle">管理后台</h1>
+  <div class="admin-stats" id="adminStats"><!-- injected by JS --></div>
+  <div class="admin-tabs">
+    <button class="admin-tab active" data-tab="payments">
+      <span data-i18n="adminTabPayments">待确认付款</span><span class="tab-badge" id="tabBadge-payments" hidden></span>
+    </button>
+    <button class="admin-tab" data-tab="listings">
+      <span data-i18n="adminTabListings">新发布待审核</span><span class="tab-badge" id="tabBadge-listings" hidden></span>
+    </button>
+    <button class="admin-tab" data-tab="edited">
+      <span data-i18n="adminTabEdited">编辑待复审</span><span class="tab-badge" id="tabBadge-edited" hidden></span>
+    </button>
+    <button class="admin-tab" data-tab="active">
+      <span data-i18n="adminTabActive">已上线广告</span>
+    </button>
+    <button class="admin-tab" data-tab="feedback">
+      <span data-i18n="adminTabFeedback">意见反馈</span><span class="tab-badge" id="tabBadge-feedback" hidden></span>
+    </button>
+    <button class="admin-tab" data-tab="referrals">
+      <span data-i18n="adminTabReferrals">分享审核</span><span class="tab-badge" id="tabBadge-referrals" hidden></span>
+    </button>
+  </div>
+  <div id="adminContent"><!-- injected by JS --></div>
+</main>
+
+<div class="toast" id="toast"></div>
+
+<script src="config.js"></script>
+<script src="common.js"></script>
+<script src="admin.js"></script>
+</body>
+</html>
