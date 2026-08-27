@@ -259,7 +259,10 @@ body.lang-ru .main-nav a, body.lang-kk .main-nav a, body.lang-en .main-nav a{
   font-size:.68rem; font-weight:700; padding:3px 10px; border-radius:999px; letter-spacing:.01em;
 }
 .listing-title{font-size:1rem; font-weight:700; color:var(--text); line-height:1.35;}
-.listing-desc{color:var(--muted); font-size:.84rem; flex:1; line-height:1.5;}
+.listing-desc{
+  color:var(--muted); font-size:.84rem; flex:1; line-height:1.5;
+  display:-webkit-box; -webkit-line-clamp:3; -webkit-box-orient:vertical; overflow:hidden;
+}
 .listing-meta{display:flex; justify-content:space-between; font-size:.76rem; color:var(--muted-2); margin-top:2px;}
 .listing-city{font-weight:600; color:var(--muted);}
 .listing-contact-row{font-size:.8rem; color:var(--muted); border-top:1px dashed var(--border); padding-top:10px; margin-top:4px;}
